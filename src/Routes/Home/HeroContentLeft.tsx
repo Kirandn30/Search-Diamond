@@ -15,12 +15,12 @@ export function HeroContentLeft() {
                 zIndex={0}
             />
             <Container className={classes.container} size="md">
-                <Title className={`${classes.title} text-5xl`}>Welcome to Mahala Almas</Title>
+                <Title className={`${classes.title}`} color='white'>Welcome to Mahala Almas</Title>
                 <Text className={classes.description} size="xl" mt="xl">   
                 </Text>
                 <Button
                     variant="gradient"
-                    size="xl"
+                    size="lg"
                     radius="xl"
                     className={classes.control}
                     onClick={() => navigate("/diamond-type")}

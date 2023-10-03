@@ -3,37 +3,42 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
-import { MantineProvider } from '@mantine/core'
+import { MantineProvider, createEmotionCache } from '@mantine/core'
 
+const myCache = createEmotionCache({
+  key: 'mantine',
+  prepend: false
+});
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <MantineProvider
-    // theme={{
-    //   colors: {
-    //     primary: [
-    //       '#002A42',
-    //       '#002A42',
-    //       '#002A42',
-    //       '#002A42',
-    //       '#002A42',
-    //       '#002A42',
-    //       '#002A42',
-    //       '#002A42',
-    //       '#002A42',
-    //       '#002A42',
-    //     ],
-    //   },
-    //   primaryColor: 'primary',
-    //   fontFamily: 'Noto Sans',
-    //   defaultRadius: 8,
-    //   components: {
-    //     Modal: {
-    //       defaultProps: {
-    //         transitionProps: { transition: "slide-down", duration: 600 }
-    //       }
-    //     }
-    //   }
-    // }}
+    emotionCache={myCache}
+    theme={{
+      colors: {
+        primary: [
+          '#002A42',
+          '#002A42',
+          '#002A42',
+          '#002A42',
+          '#002A42',
+          '#002A42',
+          '#002A42',
+          '#002A42',
+          '#002A42',
+          '#002A42',
+        ],
+      },
+      primaryColor: 'primary',
+      fontFamily: 'Poppins',
+      defaultRadius: 8,
+      components: {
+        Modal: {
+          defaultProps: {
+            transitionProps: { transition: "slide-down", duration: 600 }
+          }
+        }
+      }
+    }}
   >
     <BrowserRouter>
       <App />
